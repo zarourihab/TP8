@@ -1,0 +1,35 @@
+=== RAPPORT DE PERFORMANCE ===
+Date: 2026-03-05 22:00:42
+
+Test: Pagination salles
+Temps: 2ms
+Queries: 1
+Entity loads: 10
+Cache hits: 0
+Cache miss: 0
+Result size: 10
+Cache hit ratio: 0,00%
+--------------------------------
+Test: Accès répété cache
+Temps: 60ms
+Queries: 0
+Entity loads: 0
+Cache hits: 100
+Cache miss: 0
+Result size: 1
+Cache hit ratio: 100,00%
+--------------------------------
+Test: Recherche salles dispo
+Temps: 17ms
+Queries: 1
+Entity loads: 15
+Cache hits: 0
+Cache miss: 0
+Result size: 15
+Cache hit ratio: 0,00%
+--------------------------------
+
+Recommandations:
+- Utiliser JOIN FETCH sur les relations souvent lues.
+- Indexer date_debut/date_fin et statut.
+- Vérifier les régions Ehcache et TTL selon usage.
